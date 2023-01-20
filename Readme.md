@@ -1,1 +1,1 @@
-### App for logging work hours 
+## App for logging work hours 
