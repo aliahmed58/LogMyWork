@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.main.logmywork.Fragments.HomeFragment;
+import com.main.logmywork.Fragments.LogFragment;
 import com.main.logmywork.R;
 
 public class AllJobsScreen extends AppCompatActivity {
@@ -20,7 +21,7 @@ public class AllJobsScreen extends AppCompatActivity {
         navbar = findViewById(R.id.navbar);
 
         // set on item select listener
-        navbar.setOnItemReselectedListener(navbarListener);
+        navbar.setOnItemSelectedListener(navbarListener);
 
         // set home fragment when the app opens as the first screen
         getSupportFragmentManager().beginTransaction()
@@ -32,24 +33,26 @@ public class AllJobsScreen extends AppCompatActivity {
 
     // instance variable that implements the navbar onItemReselectedListener to change fragments when bottom navbar is clicked.
     // lambda expressions used.
-    private final NavigationBarView.OnItemReselectedListener navbarListener = item -> {
+    private final NavigationBarView.OnItemSelectedListener navbarListener = item -> {
         // create a null object that references the selected fragment
         Fragment selectedFragment = null;
 
-        // create a switch on the item's id that is clicked in the bottom nav bar
-        switch (item.getItemId()) {
-            // if home button is clicked create a new home fragment
-            case R.id.nav_home:
-                selectedFragment = new HomeFragment();
-                break;
-        }
+        // check using if statements if the item ID selected matches any of the navbar items
+        // if yes, create a new fragment object of that layout and assign it to selectedFragment
+        if (item.getItemId() == R.id.nav_home)
+            selectedFragment = new HomeFragment();
+        else if (item.getItemId() == R.id.nav_log)
+            selectedFragment = new LogFragment();
+        // if none is selected return the function to avoid a NullPointerException in next instruction.
+        else
+            return false;
 
-        // make sure the selected fragment is not null
-        assert selectedFragment != null;
         // replace the current container with the selected fragment created.
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment)
                 .setReorderingAllowed(true)
                 .commit();
+
+        return true;
     };
 
 }

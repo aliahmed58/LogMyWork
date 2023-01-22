@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".screens.AddJobScreen">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="@string/createBtn"
+        android:textColor="@color/primary"
+        android:textSize="30sp"
+        android:gravity="start" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView2"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="start"
+        android:text="@string/jobTitle"
+        android:textColor="@color/primary"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/inputJobTitle"
+        android:layout_below="@id/textView3"
+        android:layout_width="match_parent"
+        style="@style/inputField"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputJobTitle"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="start"
+        android:text="@string/startDate"
+        android:textColor="@color/primary"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/inputStartDate"
+        android:layout_below="@id/textView5"
+        style="@style/inputField"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputStartDate"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="start"
+        android:text="@string/endDate"
+        android:textColor="@color/primary"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/inputEndDate"
+        android:layout_below="@id/textView7"
+        style="@style/inputField"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="date" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="end"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancelAddJobBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:layout_marginEnd="10dp"
+            android:text="@string/cancel" />
+
+        <Button
+            android:id="@+id/addJobBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="@string/add" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

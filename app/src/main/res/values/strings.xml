@@ -6,4 +6,11 @@
     <string name="log">Log</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
+    <string name="welcome">Welcome</string>
+    <string name="createBtn">Create Job</string>
+    <string name="jobTitle">Job Title</string>
+    <string name="startDate">Start Date</string>
+    <string name="endDate">End Date (if applicable)</string>
+    <string name="add">Add</string>
+
 </resources>
